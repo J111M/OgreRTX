@@ -106,6 +106,9 @@ namespace Ogre
         void stall( void );
 
         VmaAllocator getAllocator() const { return mVmaAllocator; }
+
+        private:
+        friend class VulkanRayTracer;
     };
 }  // namespace Ogre
 
