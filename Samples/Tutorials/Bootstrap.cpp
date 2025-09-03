@@ -23,7 +23,7 @@ class KeyHandler : public OgreBites::InputListener
 int main(int argc, char *argv[])
 {
 //! [constructor]
-    OgreBites::ApplicationContext ctx("OgreTutorialApp");
+    OgreBites::ApplicationContext ctx("AAOgreTutorialApp");
     ctx.initApp();
 //! [constructor]
 
