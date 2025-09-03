@@ -30,6 +30,16 @@
           "name": "OGRE_BUILD_RENDERSYSTEM_VULKAN",
           "value": "True",
           "type": "BOOL"
+        },
+        {
+          "name": "OGRE_BUILD_PLUGIN_GLSLANG",
+          "value": "True",
+          "type": "BOOL"
+        },
+        {
+          "name": "OGRE_ASSERT_MODE",
+          "value": "2",
+          "type": "STRING"
         }
       ]
     },
