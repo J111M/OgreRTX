@@ -16,7 +16,7 @@ file(GLOB SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp" "${CMAKE_CURRENT_
 set( HEADER_FILES ${HEADER_FILES})
 set( SOURCE_FILES ${SOURCE_FILES})
 
-add_library(RenderSystem_Vulkan ${OGRE_LIB_TYPE} ${HEADER_FILES} ${SOURCE_FILES})
+add_library(RenderSystem_Vulkan ${OGRE_LIB_TYPE} ${HEADER_FILES} ${SOURCE_FILES} "include/OgreVulkanRayTracing.h" "src/OgreVulkanRayTracing.cpp")
 
 if(DEFINED ENV{VULKAN_SDK})
     target_include_directories(RenderSystem_Vulkan SYSTEM PRIVATE $ENV{VULKAN_SDK}/include)
@@ -44,7 +44,9 @@ target_link_libraries(RenderSystem_Vulkan PUBLIC OgreMain PRIVATE ${CMAKE_DL_LIB
 
 target_include_directories(RenderSystem_Vulkan PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+    "$<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/PlugIns/nvpro_core>"
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
+
     $<INSTALL_INTERFACE:include/OGRE/RenderSystems/Vulkan>)
 
 
